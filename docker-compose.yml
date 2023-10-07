@@ -2,5 +2,20 @@ version: '3'
 services:
   ubuntu22:
     build: ./ubuntu
+    environment:
+      TZ: Asia/Shanghai
+    volumes:
+      - ./ubuntu/data/home:/home
+      - ./ubuntu/data/root:/root
     ports:
      - "2201:22"
+
+  ubuntu-compile:
+    build: ./ubuntu-compile
+    environment:
+      TZ: Asia/Shanghai
+    volumes:
+      - ./ubuntu-compile/data/home:/home
+      - ./ubuntu-compile/data/root:/root
+    ports:
+     - "2210:22"

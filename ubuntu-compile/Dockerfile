@@ -12,6 +12,10 @@ RUN apt update
 RUN apt install -y vim \
     && apt install -y bzip2 
 
+# 安装编译相关工具
+RUN apt install -y make \
+    && apt install -y lsb-core lib32stdc++6
+
 # 安装ssh
 RUN apt install -y openssh-server
 RUN mkdir -p /var/run/sshd
