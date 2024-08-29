@@ -25,7 +25,7 @@ services:
     environment:
       TZ: Asia/Shanghai
     volumes:
-      - ./ubuntu-compile/data/home:/home
-      - ./ubuntu-compile/data/root:/root
+      - ./ubuntu-compile-openwrt/data/home:/home
+      - ./ubuntu-compile-openwrt/data/root:/root
     ports:
-     - "2210:22"
+     - "2211:22"
