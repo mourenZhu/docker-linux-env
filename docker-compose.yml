@@ -26,8 +26,10 @@ services:
       TZ: Asia/Shanghai
     volumes:
       - compile-openwrt:/root # compile-openwrt 是数据卷
+      - compile-openwrt-home:/home
     ports:
      - "2211:22"
 
 volumes:
   compile-openwrt:
+  compile-openwrt-home:
