@@ -30,6 +30,16 @@ services:
     ports:
      - "2211:22"
 
+  ubuntu24-yocto-atk-dl6y2c_v2.4:
+    build: ./ubuntu2404
+    environment:
+      TZ: Asia/Shanghai
+    volumes:
+      - yocto-atk-dl6y2c_v2.4:/home
+    ports:
+     - "2212:22"
+
 volumes:
   compile-openwrt:
   compile-openwrt-home:
+  yocto-atk-dl6y2c_v2.4:
