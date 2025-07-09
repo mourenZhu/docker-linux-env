@@ -1,5 +1,5 @@
 # 以最新的Ubuntu镜像为模板
-FROM ubuntu:24.04
+FROM ubuntu:16.04
 
 # 设定环境变量，防止交互卡住
 ENV DEBIAN_FRONTEND=noninteractive
@@ -11,8 +11,9 @@ ADD sources.list /root/sources.list
 RUN mv /etc/apt/sources.list  /etc/apt/sources.list_bak
 RUN cp /root/sources.list  /etc/apt/sources.list
 
+RUN apt update
 # 安装常用工具
-RUN apt update && apt install -y vim git openssh-server
+RUN apt install -y vim git openssh-server
 
 # 修改root密码
 RUN echo 'root:123456' | chpasswd
@@ -24,7 +25,6 @@ RUN adduser zhumouren \
 RUN usermod -aG sudo zhumouren
 
 RUN mkdir -p /var/run/sshd
-
 
 # 开放22端口
 EXPOSE 22
