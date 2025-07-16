@@ -15,7 +15,7 @@ RUN mv /etc/apt/sources.list  /etc/apt/sources.list_bak
 RUN cp /root/sources.list  /etc/apt/sources.list
 
 # 安装常用工具
-RUN apt update && apt install -y vim git openssh-server
+RUN apt update && apt install -y vim git sudo openssh-server
 
 # 修改root密码
 RUN echo 'root:123456' | chpasswd
