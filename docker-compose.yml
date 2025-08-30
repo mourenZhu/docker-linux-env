@@ -29,17 +29,17 @@ services:
       - compile-openwrt-home:/home
     ports:
      - "2211:22"
-
-  ubuntu24-yocto-atk-dl6y2c_v2.4:
+  
+  ubuntu24-compile:
     build: ./ubuntu2404
     environment:
       TZ: Asia/Shanghai
     volumes:
-      - yocto-atk-dl6y2c_v2.4:/home
+      - ubuntu24-compile:/home
     ports:
-     - "2212:22"
+     - "2213:22"
 
 volumes:
   compile-openwrt:
   compile-openwrt-home:
-  yocto-atk-dl6y2c_v2.4:
+  ubuntu24-compile:

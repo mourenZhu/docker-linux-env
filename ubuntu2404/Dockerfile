@@ -21,7 +21,7 @@ RUN apt update && apt install -y vim git sudo openssh-server && \
 
 # 警告：使用固定密码仅用于开发环境，生产环境请使用更安全的方式
 RUN echo 'root:123456' | chpasswd && \
-    adduser zhumouren --gecos "" --disabled-password && \
+    adduser zhumouren --gecos "" --disabled-password --shell /bin/bash && \
     echo 'zhumouren:123456' | chpasswd && \
     usermod -aG sudo zhumouren && \
     mkdir -p /var/run/sshd
